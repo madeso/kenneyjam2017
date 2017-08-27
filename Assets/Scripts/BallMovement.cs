@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour {
 	public float TargetVelocity = 300;
+	public float TargetAdoption = 0.1f;
+	public float MaxVelocity = 200;
 
 	Rigidbody2D b;
 
@@ -32,7 +34,7 @@ public class BallMovement : MonoBehaviour {
 
 		// keep velocity around target
 		var v = this.b.velocity.magnitude;
-		var newv = v + (this.TargetVelocity - v) * 0.1f;
+		var newv = Mathf.Min(this.MaxVelocity, v + (this.TargetVelocity - v) * this.TargetAdoption);
 		this.b.velocity = this.b.velocity.normalized * newv;
 	}
 }
