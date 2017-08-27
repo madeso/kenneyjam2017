@@ -840,6 +840,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 12
+  JumpPower: 20
+  JumpGravivty: 200
+  JumpTime: 0.15
 --- !u!50 &1902596457
 Rigidbody2D:
   serializedVersion: 4
@@ -858,7 +861,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &1902596458
 PolygonCollider2D:
