@@ -313,7 +313,7 @@ MonoBehaviour:
   TileHeight: 0.5
   Height: 5
   Width: 10
-  SpawnPosition: {fileID: 0}
+  SoundNewGame: {fileID: 8300000, guid: 1aeb5a6ee6f8f4f4496b05c8e005fdfa, type: 3}
 --- !u!4 &325262997
 Transform:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class TileSpawner : MonoBehaviour {
 	public int Height = 3;
 	public int Width = 5;
 
+	public AudioClip SoundNewGame;
+
 	void SpawnTiles()
 	{
 		for(int x=0; x<this.Width; x += 1) {
@@ -48,12 +50,14 @@ public class TileSpawner : MonoBehaviour {
 			{
 				SpawnTiles();
 				KillBalls();
+				AudioSource.PlayClipAtPoint(SoundNewGame, new Vector3(0,0,0));
 			}
 		}
 		else {
 			if( GameObject.FindGameObjectsWithTag("Tile").FirstOrDefault() == null ) {
 				timer = 1.0f;
 				KillBalls();
+				AudioSource.PlayClipAtPoint(SoundNewGame, new Vector3(0,0,0));
 			}
 		}
 	}
