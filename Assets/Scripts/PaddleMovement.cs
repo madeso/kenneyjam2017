@@ -22,7 +22,6 @@ public class PaddleMovement : MonoBehaviour {
 		this.rb = this.GetComponent<Rigidbody2D>();
 		this.pos = this.rb.position.x;
 		this.starty = this.y = this.rb.position.y;
-
 	}
 
 	float relm;

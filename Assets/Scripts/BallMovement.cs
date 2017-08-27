@@ -61,10 +61,18 @@ public class BallMovement : MonoBehaviour {
 		color = 0.0f;
 	}
 
+	void ShakeTiles() {
+		var shakers = GameObject.FindObjectsOfType<TileIntro>();
+		foreach(var s in shakers) {
+			s.Shake();
+		}
+	}
+
 	void OnCollisionEnter2D(Collision2D c)
 	{
 		if( c.gameObject.CompareTag("Blocker")) {
 			ScreenShake.MainShake();
+			ShakeTiles();
 			AudioSource.PlayClipAtPoint(SoundBlocker, new Vector3(0,0,0));
 			Flash();
 		}
@@ -76,6 +84,7 @@ public class BallMovement : MonoBehaviour {
 		else if(c.gameObject.CompareTag("Paddle")) {
 			var pm = c.gameObject.GetComponent<PaddleMovement>();
 			AudioSource.PlayClipAtPoint(SoundPaddle, new Vector3(0,0,0));
+			ShakeTiles();
 			Flash();
 			this.b.velocity = new Vector2(b.velocity.x + pm.GetHorMov(), b.velocity.y);
 		}

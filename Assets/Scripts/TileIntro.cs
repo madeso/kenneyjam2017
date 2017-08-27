@@ -36,6 +36,15 @@ public class TileIntro : MonoBehaviour {
 		float v = Easings.Interpolate(t, Easings.Functions.ElasticEaseOut);
 		return st + v*( en-st );
 	}
+
+	bool done = false;
+	Vector2 basePosition;
+	float shakeTimer = 0;
+
+	float RandomShake() {
+		float rb = 0.05f;
+		return Random.Range(-rb*shakeTimer, rb*shakeTimer);
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -43,17 +52,35 @@ public class TileIntro : MonoBehaviour {
 		{
 			wait -= Time.deltaTime;
 		}
-		else {
+		else if(done == false) {
 			t += Time.deltaTime * this.AnimationScale;
 			if( t > 1.0f ) {
 				t = 1.0f;
+				done = true;
 			}
 
 			float x = Inter(start.x, t, end.x);
 			float y = Inter(start.y, t, end.y);
 
+			if(done) {
+				basePosition = new Vector2(x,y);
+			}
+
 			// this.transform.localPosition = new Vector2(x, y);
 			this.rb.MovePosition(new Vector2(x,y));
 		}
+		else {
+			shakeTimer -= Time.deltaTime * 3;
+			if(shakeTimer > 0){
+				this.rb.MovePosition(basePosition + new Vector2(RandomShake(),RandomShake()));
+			}
+			else {
+				this.rb.MovePosition(basePosition);
+			}
+		}
+	}
+
+	public void Shake() {
+		this.shakeTimer = 1;
 	}
 }
