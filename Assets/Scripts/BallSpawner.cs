@@ -14,7 +14,7 @@ public class BallSpawner : MonoBehaviour {
 		{
 			var ball = GameObject.Instantiate(BallToSpawn);
 			ball.transform.position = this.transform.position + new Vector3(0, 0.5f, 0);
-			ball.AddForce(new Vector2(0, 100));
+			ball.AddForce(new Vector2(0, 300));
 		}
 	}
 }
