@@ -24,6 +24,13 @@ public class PaddleMovement : MonoBehaviour {
 		this.starty = this.y = this.rb.position.y;
 
 	}
+
+	float relm;
+
+	public float GetHorMov() {
+		var r = this.relm;
+		return r;
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -53,7 +60,8 @@ public class PaddleMovement : MonoBehaviour {
 			jump = 0;
 		}
 
-		this.pos += dx * Time.deltaTime * this.Speed;
+		this.relm = dx * this.Speed;
+		this.pos += this.relm * Time.deltaTime;
 		this.rb.MovePosition(new Vector2(this.pos, this.y));
 	}
 }

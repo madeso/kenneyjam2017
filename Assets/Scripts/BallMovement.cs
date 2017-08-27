@@ -74,8 +74,10 @@ public class BallMovement : MonoBehaviour {
 			Flash();
 		}
 		else if(c.gameObject.CompareTag("Paddle")) {
+			var pm = c.gameObject.GetComponent<PaddleMovement>();
 			AudioSource.PlayClipAtPoint(SoundPaddle, new Vector3(0,0,0));
 			Flash();
+			this.b.velocity = new Vector2(b.velocity.x + pm.GetHorMov(), b.velocity.y);
 		}
 	}
 }
