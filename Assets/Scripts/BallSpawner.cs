@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BallSpawner : MonoBehaviour {
@@ -11,7 +12,9 @@ public class BallSpawner : MonoBehaviour {
 	}
 	
 	void Update () {
-		bool canSpawn = GameObject.FindGameObjectsWithTag("Ball").Length == 0;
+		bool canSpawn = GameObject.FindGameObjectsWithTag("Ball")
+			.Where(x=>x.GetComponent<KillOutside>().IsOutside == false)
+			.FirstOrDefault() == null;
 		var r = SpawnPosition.GetComponent<SpriteRenderer>();
 		r.enabled = canSpawn;
 		if( canSpawn ) {
