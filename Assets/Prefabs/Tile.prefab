@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 61933800336561406}
   - component: {fileID: 50471568111588596}
   - component: {fileID: 114449655882360516}
-  m_Layer: 0
+  - component: {fileID: 114587945736471874}
+  m_Layer: 8
   m_Name: Tile
   m_TagString: Tile
   m_Icon: {fileID: 0}
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1154843288218428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.83, y: -3.1, z: 0}
+  m_LocalPosition: {x: -8.333647, y: 6.341186, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,7 +51,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1154843288218428}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -99,6 +100,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3ff391fd87847a6a7c0ce76705c60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114587945736471874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1154843288218428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a9a2a21b3004999906342919c5ea0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaitMax: 0.5
+  AnimationScale: 1
 --- !u!212 &212470717672159330
 SpriteRenderer:
   m_ObjectHideFlags: 1
