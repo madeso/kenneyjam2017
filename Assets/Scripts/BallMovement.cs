@@ -29,12 +29,20 @@ public class BallMovement : MonoBehaviour {
 
 		if( times > 3 ) {
 			print("Adjusting..");
-			this.b.velocity = new Vector2(b.velocity.x, b.velocity.y * 3);
+			this.b.velocity = new Vector2(b.velocity.x, b.velocity.y + Random.Range(-3, 3));
 		}
 
 		// keep velocity around target
 		var v = this.b.velocity.magnitude;
 		var newv = Mathf.Min(this.MaxVelocity, v + (this.TargetVelocity - v) * this.TargetAdoption);
 		this.b.velocity = this.b.velocity.normalized * newv;
+	}
+
+	void OnCollisionEnter2D(Collision2D c)
+	{
+		if( c.gameObject.CompareTag("Blocker")) {
+			ScreenShake.MainShake();
+		}
+		
 	}
 }
