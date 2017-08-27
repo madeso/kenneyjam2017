@@ -12,8 +12,12 @@ public class TileIntro : MonoBehaviour {
 
 	Rigidbody2D rb;
 
+	public Sprite[] Sprites;
+
 	// Use this for initialization
 	void Start () {
+		var sp = GetComponent<SpriteRenderer>();
+		sp.sprite = Sprites[Random.Range(0, Sprites.Length)];
 
 		var sy = GameObject.Find("StartY");
 

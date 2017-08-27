@@ -113,6 +113,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaitMax: 0.5
   AnimationScale: 1
+  Sprites:
+  - {fileID: 21300000, guid: 0d4c932e88c4b41c58284b9c33509df8, type: 3}
+  - {fileID: 21300000, guid: 2a779f8ff822e4fa1acb68fadf03daf6, type: 3}
+  - {fileID: 21300000, guid: 9da4a3416542943eab4ec3edf79cdaaa, type: 3}
+  - {fileID: 21300000, guid: 3f06530d045754235ab8892852d89022, type: 3}
+  - {fileID: 21300000, guid: b3e31c03334b54210b9276f0e47ca968, type: 3}
+  - {fileID: 21300000, guid: e6f4bc2de99db4a33bfafc19e7338fec, type: 3}
+  - {fileID: 21300000, guid: 5c0ede95253c44e99a9ce1b14034f50c, type: 3}
+  - {fileID: 21300000, guid: 55348e67ab3da42009feda326a7fa00a, type: 3}
 --- !u!212 &212470717672159330
 SpriteRenderer:
   m_ObjectHideFlags: 1
