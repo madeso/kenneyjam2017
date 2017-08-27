@@ -30,15 +30,25 @@ public class PaddleMovement : MonoBehaviour {
 		var r = this.relm;
 		return r;
 	}
-	
+
+	bool laspJumpDown = false;
 	// Update is called once per frame
 	void Update () {
 		float dx = 0;
 		dx = Input.GetAxis("Horizontal");
 
-		// var onground = y < starty + 0.0001f;
-		// if(onground
-		if(Input.GetButton("Jump") ) {
+		var jumpDown = Input.GetButton("Jump");
+		bool firstFown = jumpDown && !laspJumpDown;
+		laspJumpDown = jumpDown;
+
+		var onground = y < starty + 0.0001f;
+		if(!onground && firstFown ) {
+			laspJumpDown = false;
+			jumpDown = false;
+			firstFown = false;
+		}
+
+		if( jumpDown ) {
 			if( this.jumptimer < JumpTime )
 			{
 				if(this.jumptimer <= 0 ) {
