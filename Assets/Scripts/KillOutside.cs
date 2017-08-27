@@ -18,6 +18,15 @@ public class KillOutside : MonoBehaviour {
 	void Start () {
 		
 	}
+
+	public void Hide()
+	{
+		this.outside = true;
+		GetComponent<SpriteRenderer>().enabled = false;
+		GetComponent<BallMovement>().enabled = false;
+		GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+		GetComponent<CircleCollider2D>().enabled = false;
+	}
 	
 	// Update is called once per frame
 	void Update () {
