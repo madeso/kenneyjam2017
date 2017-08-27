@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class BallSpawner : MonoBehaviour {
 	public Rigidbody2D BallToSpawn;
+	public GameObject SpawnPosition;
 
 	void Start () {
 		
 	}
 	
 	void Update () {
-		if( Input.GetKeyDown(KeyCode.LeftControl) ) 
-		{
-			var ball = GameObject.Instantiate(BallToSpawn);
-			ball.transform.position = this.transform.position + new Vector3(0, 0.5f, 0);
-			ball.AddForce(new Vector2(0, 300));
+		bool canSpawn = GameObject.FindGameObjectsWithTag("Ball").Length == 0;
+		var r = SpawnPosition.GetComponent<SpriteRenderer>();
+		r.enabled = canSpawn;
+		if( canSpawn ) {
+			if( Input.GetKeyDown(KeyCode.LeftControl) ) 
+			{
+				var ball = GameObject.Instantiate(BallToSpawn);
+				ball.transform.position = this.SpawnPosition.transform.position;
+				ball.AddForce(new Vector2(0, 300));
+			}
 		}
 	}
 }
