@@ -20,7 +20,7 @@ public class BallSpawner : MonoBehaviour {
 		var r = SpawnPosition.GetComponent<SpriteRenderer>();
 		r.enabled = canSpawn;
 		if( canSpawn ) {
-			if( Input.GetKeyDown(KeyCode.LeftControl) ) 
+			if( Input.GetButton("Fire1") ) 
 			{
 				AudioSource.PlayClipAtPoint(SoundSpawn, new Vector3(0,0,0));
 				var ball = GameObject.Instantiate(BallToSpawn);

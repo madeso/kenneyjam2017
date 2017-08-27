@@ -86,7 +86,7 @@ public class BallMovement : MonoBehaviour {
 			AudioSource.PlayClipAtPoint(SoundPaddle, new Vector3(0,0,0));
 			ShakeTiles();
 			Flash();
-			this.b.velocity = new Vector2(b.velocity.x + pm.GetHorMov(), b.velocity.y);
+			this.b.velocity = new Vector2(b.velocity.x + pm.GetHorMov()*1.5f, b.velocity.y);
 		}
 	}
 }
