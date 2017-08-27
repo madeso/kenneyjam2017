@@ -13,12 +13,27 @@ public class BallMovement : MonoBehaviour {
 
 	Rigidbody2D b;
 
+	SpriteRenderer spr;
+	float color = 1;
+
 	// Use this for initialization
 	void Start () {
+		this.spr = this.GetComponent<SpriteRenderer>();
 		this.b = this.GetComponent<Rigidbody2D>();
 	}
 
 	int times = 0;
+
+	float Inter(float st, float v, float en)
+	{
+		return st + v*(en-st);
+	}
+
+	void Update() {
+		color = Mathf.Min(color+Time.deltaTime*3, 1.0f);
+		float c = Inter(1.0f, color, 0.4f);
+		this.spr.color = new Color(c,c,c);
+	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -42,18 +57,25 @@ public class BallMovement : MonoBehaviour {
 		this.b.velocity = this.b.velocity.normalized * newv;
 	}
 
+	void Flash() {
+		color = 0.0f;
+	}
+
 	void OnCollisionEnter2D(Collision2D c)
 	{
 		if( c.gameObject.CompareTag("Blocker")) {
 			ScreenShake.MainShake();
 			AudioSource.PlayClipAtPoint(SoundBlocker, new Vector3(0,0,0));
+			Flash();
 		}
 
 		else if(c.gameObject.CompareTag("Tile")) {
 			AudioSource.PlayClipAtPoint(SoundTile, new Vector3(0,0,0));
+			Flash();
 		}
 		else if(c.gameObject.CompareTag("Paddle")) {
 			AudioSource.PlayClipAtPoint(SoundPaddle, new Vector3(0,0,0));
+			Flash();
 		}
 	}
 }
