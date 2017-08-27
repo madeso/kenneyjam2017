@@ -15,7 +15,6 @@ public class DestroyTile : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		print(coll.gameObject.tag);
 		if(coll.gameObject.tag == "Ball") {
 			Destroy(this.gameObject);
 		}

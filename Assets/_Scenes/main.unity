@@ -751,8 +751,8 @@ GameObject:
   - component: {fileID: 1902596453}
   - component: {fileID: 1902596455}
   - component: {fileID: 1902596456}
-  - component: {fileID: 1902596458}
   - component: {fileID: 1902596457}
+  - component: {fileID: 1902596458}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -839,7 +839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a4cee01bd6148889ae7b4b949c9dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 7
+  Speed: 12
 --- !u!50 &1902596457
 Rigidbody2D:
   serializedVersion: 4
@@ -860,8 +860,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &1902596458
-BoxCollider2D:
+--- !u!60 &1902596458
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -882,9 +882,24 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 6.2, y: 1.2}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.1, y: 0.26999998}
+      - {x: 3.044513, y: 0.35548687}
+      - {x: 2.77, y: 0.54323006}
+      - {x: 2.704316, y: 0.5656843}
+      - {x: 1.3715057, y: 0.596323}
+      - {x: -1.3545489, y: 0.6069155}
+      - {x: -2.697105, y: 0.53136826}
+      - {x: -3.02, y: 0.38}
+      - {x: -3.1, y: 0.25}
+      - {x: -3.1, y: -0.26}
+      - {x: -2.8899999, y: -0.51}
+      - {x: -2.7, y: -0.59999996}
+      - {x: 2.6499999, y: -0.59999996}
+      - {x: 2.75, y: -0.58}
+      - {x: 2.8899999, y: -0.5}
+      - {x: 3.1, y: -0.31}
 --- !u!1 &1954959410
 GameObject:
   m_ObjectHideFlags: 0
