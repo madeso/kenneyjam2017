@@ -313,6 +313,7 @@ MonoBehaviour:
   TileHeight: 0.5
   Height: 5
   Width: 10
+  SpawnPosition: {fileID: 0}
 --- !u!4 &325262997
 Transform:
   m_ObjectHideFlags: 0
@@ -647,6 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 2
+  SoundDeath: {fileID: 0}
 --- !u!1 &1010792493
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +860,7 @@ GameObject:
   - component: {fileID: 1902596458}
   m_Layer: 0
   m_Name: Paddle
-  m_TagString: Untagged
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -931,6 +933,7 @@ MonoBehaviour:
   BallToSpawn: {fileID: 50580075495732034, guid: c8b4c6a11cd9c4b008c97b3b2746aca1,
     type: 2}
   SpawnPosition: {fileID: 149573037}
+  SoundSpawn: {fileID: 8300000, guid: 25869780da8704bfbb205db52edb4d90, type: 3}
 --- !u!114 &1902596456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,6 +949,7 @@ MonoBehaviour:
   JumpPower: 20
   JumpGravivty: 200
   JumpTime: 0.15
+  JumpSound: {fileID: 8300000, guid: 96a205b567184437d83b62db5d7c5671, type: 3}
 --- !u!50 &1902596457
 Rigidbody2D:
   serializedVersion: 4

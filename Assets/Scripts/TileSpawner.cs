@@ -11,6 +11,8 @@ public class TileSpawner : MonoBehaviour {
 	public int Height = 3;
 	public int Width = 5;
 
+	public GameObject SpawnPosition;
+
 	void SpawnTiles()
 	{
 		for(int x=0; x<this.Width; x += 1) {

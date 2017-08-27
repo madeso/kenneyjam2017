@@ -6,6 +6,8 @@ public class KillOutside : MonoBehaviour {
 	bool outside = false;
 	public float life = 2.0f;
 
+	public AudioClip SoundDeath;
+
 	public bool IsOutside
 	{
 		get{
@@ -45,6 +47,7 @@ public class KillOutside : MonoBehaviour {
 		if(coll.gameObject.tag == "PlayArea")
 		{
 			outside = true;
+			AudioSource.PlayClipAtPoint(SoundDeath, new Vector3(0,0,0));
 		}
 	}
 }

@@ -7,6 +7,10 @@ public class BallMovement : MonoBehaviour {
 	public float TargetAdoption = 0.1f;
 	public float MaxVelocity = 200;
 
+	public AudioClip SoundBlocker;
+	public AudioClip SoundTile;
+	public AudioClip SoundPaddle;
+
 	Rigidbody2D b;
 
 	// Use this for initialization
@@ -42,7 +46,14 @@ public class BallMovement : MonoBehaviour {
 	{
 		if( c.gameObject.CompareTag("Blocker")) {
 			ScreenShake.MainShake();
+			AudioSource.PlayClipAtPoint(SoundBlocker, new Vector3(0,0,0));
 		}
-		
+
+		else if(c.gameObject.CompareTag("Tile")) {
+			AudioSource.PlayClipAtPoint(SoundTile, new Vector3(0,0,0));
+		}
+		else if(c.gameObject.CompareTag("Paddle")) {
+			AudioSource.PlayClipAtPoint(SoundPaddle, new Vector3(0,0,0));
+		}
 	}
 }

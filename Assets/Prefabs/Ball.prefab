@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 2
+  SoundDeath: {fileID: 8300000, guid: c98abd20afb3d4a17b5d4509c9271efe, type: 3}
 --- !u!114 &114225791770817244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,6 +197,9 @@ MonoBehaviour:
   TargetVelocity: 10
   TargetAdoption: 0.4
   MaxVelocity: 150
+  SoundBlocker: {fileID: 8300000, guid: 30803fe0f0ab74574bc8a341299e8e30, type: 3}
+  SoundTile: {fileID: 8300000, guid: 6089bc522320c471bb09a2d1ad7a5d77, type: 3}
+  SoundPaddle: {fileID: 8300000, guid: 470e1df64f7c94a80948d05a050de046, type: 3}
 --- !u!212 &212712148341868278
 SpriteRenderer:
   m_ObjectHideFlags: 1

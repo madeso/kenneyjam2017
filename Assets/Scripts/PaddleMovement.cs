@@ -16,6 +16,8 @@ public class PaddleMovement : MonoBehaviour {
 	public float JumpGravivty = 100;
 	public float JumpTime = 0.1f;
 
+	public AudioClip JumpSound;
+
 	void Start () {
 		this.rb = this.GetComponent<Rigidbody2D>();
 		this.pos = this.rb.position.x;
@@ -33,6 +35,9 @@ public class PaddleMovement : MonoBehaviour {
 		if(Input.GetButton("Jump") ) {
 			if( this.jumptimer < JumpTime )
 			{
+				if(this.jumptimer <= 0 ) {
+					AudioSource.PlayClipAtPoint(JumpSound, new Vector3(0,0,0));
+				}
 				jump = this.JumpPower;
 				this.jumptimer += Time.deltaTime;
 			}

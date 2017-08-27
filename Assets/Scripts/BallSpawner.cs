@@ -7,6 +7,8 @@ public class BallSpawner : MonoBehaviour {
 	public Rigidbody2D BallToSpawn;
 	public GameObject SpawnPosition;
 
+	public AudioClip SoundSpawn;
+
 	void Start () {
 		
 	}
@@ -20,6 +22,7 @@ public class BallSpawner : MonoBehaviour {
 		if( canSpawn ) {
 			if( Input.GetKeyDown(KeyCode.LeftControl) ) 
 			{
+				AudioSource.PlayClipAtPoint(SoundSpawn, new Vector3(0,0,0));
 				var ball = GameObject.Instantiate(BallToSpawn);
 				ball.transform.position = this.SpawnPosition.transform.position;
 				ball.AddForce(new Vector2(0, 300));
